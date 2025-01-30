@@ -99,5 +99,5 @@ bilgilerini çıkarır
 * **Protokol Analizi (protocol mode):** Kullanılan protokollerin istatistiklerini çıkarır
 * **JSON Çıktı:** Üretir ve dosyaya kaydeder
 
-  📜 Lisans
+##  📜 Lisans
 Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
