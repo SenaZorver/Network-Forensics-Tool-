@@ -98,3 +98,6 @@ bilgilerini çıkarır
 * **Akış Yeniden Yapılandırma (flow mode):** IP çiftlerine göre trafiği gruplar
 * **Protokol Analizi (protocol mode):** Kullanılan protokollerin istatistiklerini çıkarır
 * **JSON Çıktı:** Üretir ve dosyaya kaydeder
+
+  📜 Lisans
+Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
