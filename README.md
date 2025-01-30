@@ -1,6 +1,8 @@
 # Network-Forensics-Tool-
 Network Forensics Tool
+
 📌 Projenin Amacı ve Genel İşleyişi
+
 Bu proje, ağ trafiği analizini gerçekleştiren ve adli bilişim için kullanılabilen bir ağ adli analiz aracıdır.
 Temel işlevleri:
 
@@ -9,92 +11,93 @@ Temel işlevleri:
 ✔ Protokol Analizi: Farklı ağ protokollerini analiz eder ve anormallikleri tespit eder.
 
 👤 Proje Sahibi
+
 Ad Soyad: Sena Zorver
 Öğrenci Numarası: 2320191012
 
 📦 Kullanılan Kütüphaneler ve Versiyonları
+
 Aşağıdaki Python kütüphaneleri projede kullanılmıştır:
+	•	scapy (2.5.0) → Paket analizi ve manipülasyonu için.
+	•	pyshark (0.6) → PCAP dosyalarını analiz etme ve canlı trafik yakalama için.
+	•	dpkt (1.9.8) → Düşük seviyeli PCAP analizi ve protokol ayrıştırma için.
+	•	tshark (Wireshark 4.0.0) → Komut satırından paket analizi için.
+	•	json (Yerleşik) → Verileri JSON formatında işlemek için.
 
-scapy (2.5.0) → Paket analizi ve manipülasyonu için.
-pyshark (0.6) → PCAP dosyalarını analiz etme ve canlı trafik yakalama için.
-dpkt (1.9.8) → Düşük seviyeli PCAP analizi ve protokol ayrıştırma için.
-tshark (Wireshark 4.0.0) → Komut satırından paket analizi için.
-json (Yerleşik) → Verileri JSON formatında işlemek için.
 🛠 Gerekli Araçlar ve Kurulum Gereksinimleri
+
 Projenin çalıştırılabilmesi için aşağıdaki bileşenler gereklidir:
+	•	Python 3.10 → Programın çalıştırılması için.
+	•	Wireshark → Ağ trafiğini yakalamak ve analiz etmek için.
+	•	Tshark → Komut satırından paket analizi yapmak için.
+	•	Libpcap → Linux sistemlerde paket yakalama için.
+	•	Pip → Python kütüphanelerini yüklemek için.
 
-Python 3.10 → Programın çalıştırılması için.
-Wireshark → Ağ trafiğini yakalamak ve analiz etmek için.
-Tshark → Komut satırından paket analizi yapmak için.
-Libpcap → Linux sistemlerde paket yakalama için.
-Pip → Python kütüphanelerini yüklemek için.
 ⚙️ Kurulum ve Çalıştırma
+
 1️⃣ Python ve Gerekli Araçları Yükleyin
-Öncelikle, Python 3.10'u kurun.
 
-Aşağıdaki komutlarla Wireshark ve Tshark'ı yükleyin:
+Öncelikle, Python 3.10’u kurun.
 
-bash
-Kopyala
-Düzenle
+Aşağıdaki komutlarla Wireshark ve Tshark’ı yükleyin:
+
 sudo apt install wireshark tshark  # Linux için
 brew install wireshark tshark      # macOS için
-Windows kullanıyorsan Wireshark'ın resmi sitesinden indirebilirsin: Wireshark Download
+
+Windows kullanıyorsan Wireshark’ın resmi sitesinden indirebilirsin: Wireshark Download
 
 2️⃣ Projeyi İndirin ve Gerekli Bağımlılıkları Kurun
+
 Proje deposunu GitHub üzerinden klonlayın:
 
-bash
-Kopyala
-Düzenle
 git clone <repository_url>
 cd <repository_folder>
+
 Gerekli Python kütüphanelerini yüklemek için:
 
-bash
-Kopyala
-Düzenle
 pip install -r requirements.txt
+
 🚀 Çalıştırma
+
 PCAP dosyası analizi için:
 
-bash
-Kopyala
-Düzenle
 python network_forensics.py --pcap trafik.pcap --mode packet --output result.json
+
 Gerçek zamanlı analiz için:
 
-bash
-Kopyala
-Düzenle
 python network_forensics.py --live_capture --output realtime.json
+
 Belirli bir IP için analiz:
 
-bash
-Kopyala
-Düzenle
 python network_forensics.py --pcap trafik.pcap --filter "ip 192.168.1.1" --output filtered.json
+
 ⚙️ Zorunlu Çalışma Parametreleri
+
 Parametre	Açıklama
 --pcap	Analiz edilecek PCAP dosyasının yolu.
 --mode	Çalışma modu: packet, flow, protocol.
 --output	JSON formatında çıktının kaydedileceği dosya.
+
 🔧 Opsiyonel Parametreler
+
 Parametre	Açıklama
 --filter	Belirli bir IP, port veya protokol için filtreleme yapar.
 --live_capture	Gerçek zamanlı paket yakalama modu.
 --verbose	Detaylı log çıktısı sağlar.
-📌 "Network Forensics Tool" Temel Python Kodu
+
+📌 “Network Forensics Tool” Temel Python Kodu
+
 ✔ Packet Capture Analysis: .pcap dosyasını okuyarak paketleri analiz eder.
 ✔ Flow Reconstruction: IP adreslerine göre trafik akışını yeniden yapılandırır.
 ✔ Protocol Analysis: Protokol bazlı istatistikler oluşturur.
 ✔ JSON Formatında Çıktı Üretir.
 
 📌 Kod Açıklaması
+	•	Paket Analizi (packet mode) → PCAP dosyasındaki tüm paketleri analiz eder, kaynak/destinasyon IP ve protokol bilgilerini çıkarır.
+	•	Akış Yeniden Yapılandırma (flow mode) → IP çiftlerine göre trafiği gruplar.
+	•	Protokol Analizi (protocol mode) → Kullanılan protokollerin istatistiklerini çıkarır.
+	•	JSON Çıktı Üretir ve Dosyaya Kaydeder.
 
-Paket Analizi (packet mode) → PCAP dosyasındaki tüm paketleri analiz eder, kaynak/destinasyon IP ve protokol bilgilerini çıkarır.
-Akış Yeniden Yapılandırma (flow mode) → IP çiftlerine göre trafiği gruplar.
-Protokol Analizi (protocol mode) → Kullanılan protokollerin istatistiklerini çıkarır.
-JSON Çıktı Üretir ve Dosyaya Kaydeder.
 📜 Lisans
+
 Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
