@@ -96,7 +96,3 @@ python network_forensics.py --pcap trafik.pcap --filter "ip 192.168.1.1" --outpu
 * *Akış Yeniden Yapılandırma (flow mode):* IP çiftlerine göre trafiği gruplar
 * *Protokol Analizi (protocol mode):* Kullanılan protokollerin istatistiklerini çıkarır
 * *JSON Çıktı:* Üretir ve dosyaya kaydeder
-
-📜 Lisans
-
-Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasını inceleyebilirsiniz.
