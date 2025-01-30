@@ -1,3 +1,4 @@
+#canlı trafik yakalama özelliği eklendi
 import json
 import pyshark
 from collections import defaultdict
